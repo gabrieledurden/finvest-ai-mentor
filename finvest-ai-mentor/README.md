@@ -2,9 +2,34 @@
 
 **Un mentor AI avanzato per investimenti finanziari con analisi di portfolio completa, consigli intelligenti e strumenti di trading professionali.**
 
-## ✨ Demo Live
+## ✨ Links Utili
 
-🚀 **[Accedi all'applicazione](https://5173-iklwzcav7i1jgoc0dldzo-5185f4aa.sandbox.novita.ai/)**
+🔗 **GitHub Repository**: [https://github.com/gabrieledurden/finvest-ai-mentor](https://github.com/gabrieledurden/finvest-ai-mentor)
+
+## 🚀 Deploy su Piattaforme
+
+### Deploy su Vercel (Raccomandato)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/gabrieledurden/finvest-ai-mentor)
+
+1. Clicca il pulsante sopra
+2. Connetti il tuo account GitHub
+3. Il deploy sarà automatico con queste impostazioni:
+   - **Framework**: Vite
+   - **Build Command**: `npm run build`
+   - **Output Directory**: `dist`
+
+### Deploy su Netlify
+1. Vai su [netlify.com](https://netlify.com)
+2. Trascina la cartella `dist/` su Netlify Drop
+3. Oppure connetti il repository GitHub per deploy automatici
+
+### Deploy Locale
+```bash
+git clone https://github.com/gabrieledurden/finvest-ai-mentor.git
+cd finvest-ai-mentor
+npm install
+npm run dev
+```
 
 ## 🎯 Caratteristiche Principali
 
