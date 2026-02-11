@@ -63,11 +63,10 @@ export const getDiversificationScore = (assets: any[]): number => {
     return acc;
   }, {} as Record<string, number>);
   
-  const types = Object.keys(typeDistribution);
   const allocations = Object.values(typeDistribution);
   
   // Calculate Herfindahl-Hirschman Index (lower is more diversified)
-  const hhi = allocations.reduce((sum, allocation) => sum + Math.pow(allocation / 100, 2), 0);
+  const hhi = allocations.reduce((sum: number, allocation: number) => sum + Math.pow(allocation / 100, 2), 0);
   
   // Convert to score (higher is better)
   return Math.round((1 - hhi) * 100);
@@ -75,7 +74,7 @@ export const getDiversificationScore = (assets: any[]): number => {
 
 export const getRiskScore = (assets: any[], userRiskProfile: string): number => {
   // Simplified risk calculation based on asset types and volatility
-  const riskWeights = {
+  const riskWeights: any = {
     cash: 0,
     bond: 20,
     etf: 40,
@@ -85,8 +84,8 @@ export const getRiskScore = (assets: any[], userRiskProfile: string): number => 
     real_estate: 30,
   };
   
-  const weightedRisk = assets.reduce((sum, asset) => {
-    const risk = riskWeights[asset.type as keyof typeof riskWeights] || 50;
+  const weightedRisk = assets.reduce((sum: number, asset: any) => {
+    const risk = riskWeights[asset.type] || 50;
     return sum + (risk * asset.allocation / 100);
   }, 0);
   
@@ -119,7 +118,7 @@ export const debounce = <T extends (...args: any[]) => void>(
   func: T,
   delay: number
 ): ((...args: Parameters<T>) => void) => {
-  let timeoutId: NodeJS.Timeout;
+  let timeoutId: any;
   
   return (...args: Parameters<T>) => {
     clearTimeout(timeoutId);
@@ -186,7 +185,7 @@ export const getTimeframeLabel = (period: string): string => {
 };
 
 export const formatDate = (date: Date, format: 'short' | 'medium' | 'long' = 'medium'): string => {
-  const options: Intl.DateTimeFormatOptions = {
+  const options: any = {
     short: { day: 'numeric', month: 'short' },
     medium: { day: 'numeric', month: 'short', year: 'numeric' },
     long: { day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit' },

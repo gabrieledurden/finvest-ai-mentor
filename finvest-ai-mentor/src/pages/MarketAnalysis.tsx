@@ -345,7 +345,7 @@ export const MarketAnalysis: React.FC = () => {
                 {news.title}
               </h4>
               <div className="flex items-center text-xs text-gray-600">
-                <Clock className="h-3 w-3 mr-1" />
+                <Activity className="h-3 w-3 mr-1" />
                 {news.time}
               </div>
             </div>
